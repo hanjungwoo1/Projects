@@ -1,0 +1,19 @@
+certifi==2021.5.30
+cycler==0.11.0
+dataclasses @ file:///home/conda/feedstock_root/build_artifacts/dataclasses_1628958435052/work
+kiwisolver==1.3.1
+matplotlib==3.3.4
+mkl-fft==1.2.0
+mkl-random==1.2.0
+mkl-service==2.3.0
+numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1603487797006/work
+olefile @ file:///home/conda/feedstock_root/build_artifacts/olefile_1602866521163/work
+Pillow==8.4.0
+pyparsing==3.0.6
+python-dateutil==2.8.2
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
+torch==1.8.0
+torchaudio==0.8.0a0+a751e1d
+torchvision==0.9.0
+tqdm==4.62.3
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1638334978229/work
