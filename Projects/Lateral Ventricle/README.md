@@ -1,8 +1,9 @@
-# Lateral Ventricle
+# Lateral Ventricle   
 
-## Overview
+## Overview 
  1. Segmentation Lateral Ventricle
  2. Brain CT data
+
 
 ## Code
  - code_2020020592_한정우.py
