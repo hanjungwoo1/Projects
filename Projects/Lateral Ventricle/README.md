@@ -14,7 +14,7 @@
 ### Step 1.
 #### Data EDA
 
-<img src="img/Brain_Train.PNG" width="30%" height="30%">
+<img src="img/brain_Train.PNG" width="30%" height="30%">
 <img src="img/Brain_Test.PNG" width="30%" height="30%">
 
  - Goal : 2개의 Lateral Ventricle을 Segmentation
