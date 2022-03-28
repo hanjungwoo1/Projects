@@ -14,8 +14,8 @@
 ### Step 1.
 #### Data EDA
 
-<img src="img/brain_Train.PNG" width="30%" height="30%">
-<img src="img/Brain_Test.PNG" width="30%" height="30%">
+<img src="img/brain_Train.PNG" width="50%" height="50%">
+<img src="img/Brain_Test.PNG" width="50%" height="50%">
 
  - Goal : 2개의 Lateral Ventricle을 Segmentation
  - 총 600개의 Train과 Test이므로 데이터 수가 적음 -> K-fold
@@ -31,10 +31,10 @@
 ### Step 3.
  - Train : batch 25, cross Validation - 6-fold validation
 
-<img src="img/result.jpg" width="30%" height="30%">
+<img src="img/result.jpg" width="70%" height="70%">
 
 ### step 4.
  - Test : Local Feature, global Feature Issue - Receptive Field Tuning
  - add Data post-processing
 
-<img src="img/test.png" width="30%" height="30%">
+<img src="img/test.png" width="70%" height="70%">
