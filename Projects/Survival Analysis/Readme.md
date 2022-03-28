@@ -13,6 +13,7 @@
   organization={PMLR}
 }
 ```
+![GAIN](img/gain.jpg)
  3. Linear regression based classification
  4. Kaplan-Meier Estimator
  5. compare experiments(4 and 5)
@@ -38,6 +39,8 @@
 
 ### Step 3.
  - Imputed된 Data, Step 1.에 Kaplan-Meier Estimation을 적용 
+<img src="img/adas.png" width="30%" height="30%">
+ ![survival](img/survival.png)
 
 Kaplan-Meier Estimation : 생존 분석(Survival Analysis)에 적용 가능한 기법 중 하나, 시간의 흐름에 따른 어떠한 사건의 발생 확률을 알아보는 통계 분석 및 예측 기법.
 
