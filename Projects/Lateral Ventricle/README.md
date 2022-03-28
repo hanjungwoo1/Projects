@@ -11,11 +11,11 @@
 ## Data
  - Brain CT nifti
 
-### Step 1. 
-####Data EDA
+### Step 1.
+#### Data EDA
 
-<img src="img/Brain_Train.jpg" width="30%" height="30%">
-<img src="img/Brain_Test.jpg" width="30%" height="30%">
+<img src="img/Brain_Train.PNG" width="30%" height="30%">
+<img src="img/Brain_Test.PNG" width="30%" height="30%">
 
  - Goal : 2개의 Lateral Ventricle을 Segmentation
  - 총 600개의 Train과 Test이므로 데이터 수가 적음 -> K-fold
@@ -37,4 +37,4 @@
  - Test : Local Feature, global Feature Issue - Receptive Field Tuning
  - add Data post-processing
 
-<img src="img/test.jpg" width="30%" height="30%">
+<img src="img/test.png" width="30%" height="30%">
