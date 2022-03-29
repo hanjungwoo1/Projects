@@ -1,4 +1,6 @@
 # Survival Analysis
+## AI healthcare Project 1
+Goal : missing data가 포함된 데이터에 딥러닝 기반 survival analysis를 적용하여 Kaplan-Meier Estimation과 비교
 
 ## Overview
  1. find Missing data

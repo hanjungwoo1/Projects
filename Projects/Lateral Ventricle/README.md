@@ -1,10 +1,12 @@
 # Lateral Ventricle   
+## AI healthcare Project 2
+Goal : Brain CT Data를 Segmentation
+
 
 ## Overview 
  1. Segmentation Lateral Ventricle
  2. Brain CT data
-
-
+ 
 ## Code
  - code_2020020592_한정우.py
  - End to End
