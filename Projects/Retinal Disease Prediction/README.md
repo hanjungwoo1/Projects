@@ -26,6 +26,7 @@ Goal : 기존의 논문을 새로운 기술(Triple GAN)을 적용하여 더 좋�
 |DRUSEN|8,616|0.0792|
 |NORMAL|51,140|0.4703|
 |SUM|108,738|1|
+
 OCT 2017 Datasets + OCT 2017 AMD
 
  - 이러한 문제를 Triple GAN을 통하여, imbalance를 해결한다면 정확도의 향상이 있음[3]
@@ -85,7 +86,7 @@ OCT 2017 Datasets + OCT 2017 AMD
 |AMD|12,892|0.10|
 |CNV|38,000|0.30|
 |DME|12,000|0.09|
-|DRUSEN|10,00|0.08|
+|DRUSEN|1,000|0.08|
 |NORMAL|51,500|0.40|
 |SUM|124,392|1|
 
