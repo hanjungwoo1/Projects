@@ -47,14 +47,17 @@ def send_plain_mail(sender, receiver, email, password, subject, content):
         if smtp is not None:
             smtp.quit()
 
-target = input("input Target : ")
-sender = input("input Sender's ID : ")
-password = input("input Sender's password : ")
 
-send_plain_mail(sender,
-                target,
-                sender,
-                password,
-                "얌망",
-                "얌망"
-                )
+if __name__ == "__main__":
+
+    target = input("input Target : ")
+    sender = input("input Sender's ID : ")
+    password = input("input Sender's password : ")
+
+    send_plain_mail(sender,
+                    target,
+                    sender,
+                    password,
+                    "얌망",
+                    "얌망"
+                    )
