@@ -80,6 +80,16 @@ def get_file_name(link):
     return filename
 
 
+def get_composer_name(link):
+    filename = link.split('/')[::-1][1]
+    return filename
+
+
+def get_era_name(link):
+    filename = link.split('/')[::-1][2]
+    return filename
+
+
 def note_count(measure, count_dict):
     bass_note = None
     for chord in measure.recurse().getElementsByClass('Chord'):
@@ -159,10 +169,14 @@ def simplify_roman_name(roman_numeral):
 def process_single_file(midi_path):
     try:
         midi_name = get_file_name(midi_path)
+        composer_name = get_composer_name(midi_path)
+        era_name = get_era_name(midi_path)
         midi = open_midi(midi_path, True)
         return (
             midi.analyze('key'),
             midi_path,
+            composer_name,
+            era_name,
             harmonic_reduction(midi),
             midi_name)
     except Exception as e:
@@ -173,7 +187,9 @@ def process_single_file(midi_path):
 
 def create_midi_dataframe(midi_files):
     key_signature_column = []
-    game_name_column = []
+    path_name_column = []
+    composer_name_column = []
+    era_name_column = []
     harmonic_reduction_column = []
     midi_name_column = []
     pool = Pool(8)
@@ -186,12 +202,16 @@ def create_midi_dataframe(midi_files):
             continue
 
         key_signature_column.append(result[0])
-        game_name_column.append(result[1])
-        harmonic_reduction_column.append(result[2])
-        midi_name_column.append(result[3])
+        path_name_column.append(result[1])
+        composer_name_column.append(result[2])
+        era_name_column.append(result[3])
+        harmonic_reduction_column.append(result[4])
+        midi_name_column.append(result[5])
 
-    d = {'midi_name': midi_name_column,
-         'game_name': game_name_column,
+    d = {'midi_path': path_name_column,
+         'era_name' : era_name_column,
+         'composer_name' : composer_name_column,
+         'midi_name': midi_name_column,
          'key_signature': key_signature_column,
          'harmonic_reduction': harmonic_reduction_column}
     return pd.DataFrame(data=d)
