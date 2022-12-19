@@ -84,7 +84,6 @@ if __name__ == "__main__":
 
     model = gensim.models.Word2Vec(df["harmonic_reduction"], min_count=2, window=4)
 
-
     print("List of chords found:")
     print(model.wv.index_to_key)
     print("Number of chords considered by model: {0}".format(len(model.wv.index_to_key)))
