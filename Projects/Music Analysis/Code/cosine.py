@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import seaborn as sns
 
 import gensim, logging
 import pprint
@@ -62,7 +63,7 @@ def calculate_similarity_aux(df, model, source_name, target_names=[], threshold=
     return results
 
 
-def calculate_similarity(df, model, source_name, target_prefix, threshold=0):
+def calculate_similarity_era(df, model, source_name, target_prefix, threshold=0):
     source_midi_names = df[df["midi_name"] == source_name]["midi_name"].values
     if (len(source_midi_names) == 0):
         print("Invalid source name")
@@ -78,6 +79,30 @@ def calculate_similarity(df, model, source_name, target_prefix, threshold=0):
     return calculate_similarity_aux(df, model, source_midi_name, target_midi_names, threshold)
 
 
+def calculate_similarity(df, model, source_name, threshold=0):
+    source_midi_names = df[df["midi_name"] == source_name]["midi_name"].values
+    if (len(source_midi_names) == 0):
+        print("Invalid source name")
+        return
+
+    source_midi_name = source_midi_names[0]
+
+    target_midi_names = df["midi_name"].values
+    if (len(target_midi_names) == 0):
+        print("Invalid target prefix")
+        return
+
+    return_list = []
+
+    data = calculate_similarity_aux(df, model, source_midi_name, target_midi_names, threshold)
+
+    for each_data in data:
+        return_list.append(each_data["score"])
+
+
+    return return_list
+
+
 if __name__ == "__main__":
 
     df = pd.read_csv("../file_name.csv", sep=",")
@@ -88,16 +113,27 @@ if __name__ == "__main__":
     print(model.wv.index_to_key)
     print("Number of chords considered by model: {0}".format(len(model.wv.index_to_key)))
 
-    get_related_chords('I')
-    get_related_chords('#')
-    get_related_chords('V')
+    # get_related_chords('I')
+    # get_related_chords('#')
+    # get_related_chords('V')
 
     # The first one should be smaller since "i" and "ii" chord doesn't share notes,
     # different from "IV" and "vi" which share 2 notes.
-    get_chord_similarity("i", "I")
-    get_chord_similarity("v", "5")
+    # get_chord_similarity("i", "I")
+    # get_chord_similarity("v", "5")
 
     # This one should be bigger because they are "enharmonic".
 
+    total_list = []
+
     pp = pprint.PrettyPrinter(width=41, compact=True)
-    pp.pprint(calculate_similarity(df, model, "lastravaganza.mid", "Romantic"))  # sonic1 x sonic1 music
+    for midi in df["midi_name"]:
+        # pp.pprint(calculate_similarity(df, model, midi))
+        total_list.append(calculate_similarity(df, model, midi))
+
+    # pp = pprint.PrettyPrinter(width=41, compact=True)
+    # pp.pprint(calculate_similarity(df, model, "lastravaganza.mid", "Romantic"))  #
+
+
+
+
