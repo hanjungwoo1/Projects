@@ -75,6 +75,7 @@ def open_midi(midi_path, remove_drums):
     return midi.translate.midiFileToStream(mf)
 
 
+
 def get_file_name(link):
     filename = link.split('/')[::-1][0]
     return filename
